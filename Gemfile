@@ -25,3 +25,6 @@ group :test, :development do
   gem 'factory_girl'
   gem 'faker'
 end
+
+# Yelp API
+gem 'yelp', require: 'yelp'
