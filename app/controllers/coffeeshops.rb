@@ -15,6 +15,6 @@
 # end
 
 post '/coffeeshop' do
-  @coffeeshop = Coffeeshop.new(search(params['location']))
-  erb :'/coffeeshops/show', layout: false
+  @coffeeshop = search(params['location'])
+  erb :'/coffeeshops/show', layout: false, locals: {coffeeshop: @coffeeshop}
 end
