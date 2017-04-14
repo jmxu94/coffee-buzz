@@ -1,6 +1,6 @@
 <h1> Coffee Buzz! </h1>
 
-<form action='/coffeeshops' method='GET'>
+<form id='retrieve-coffee' action='/coffeeshop' method='POST'>
   Select a city:
   <select name='location'>
     <option value='Seattle, WA'>Seattle, WA</option>
@@ -16,4 +16,7 @@
   </select>
   <input type='submit' value='Buzz'>
 </form>
+
+<div id='random-coffeeshop'>
+</div>
 

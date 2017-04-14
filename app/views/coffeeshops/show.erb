@@ -1,6 +1,7 @@
 <title> Buzzed! </title>
 
-<h2><%= @coffeeshop.name %></h2>
+<img src="<%= coffeeshop[:image_url] %>" alt="<%= coffeeshop[:name] %>">
 
-<p><%= @coffeeshop.address %></p>
-<img src="<%= @coffeeshop.image_url %>" alt="<%= @coffeeshop.name%>" >
+<h2><%= coffeeshop[:name] %></h2>
+<p><%= coffeeshop[:address] %></p>
+
