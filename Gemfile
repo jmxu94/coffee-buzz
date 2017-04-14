@@ -26,5 +26,8 @@ group :test, :development do
   gem 'faker'
 end
 
-# Yelp API
-gem 'yelp', require: 'yelp'
+# Yelp API requests
+gem "http"
+
+# Load environment
+gem 'dotenv-rails'
