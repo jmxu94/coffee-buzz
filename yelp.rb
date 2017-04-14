@@ -8,7 +8,7 @@ SEARCH_PATH = "/v3/businesses/search"
 BEARER_TOKEN = "Bearer " + "#{ENV['TOKEN']}"
 
 DEFAULT_LOCATION = "Seattle, WA"
-SEARCH_LIMIT = 20
+SEARCH_LIMIT = 50
 
 # Returns a parsed json object of the request
 def search(location = DEFAULT_LOCATION)
