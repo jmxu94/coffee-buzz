@@ -25,5 +25,3 @@ def search(term = DEFAULT_TERM, location = DEFAULT_LOCATION)
 
   random_select = businesses.sample
 end
-
-p search
