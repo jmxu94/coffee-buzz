@@ -23,5 +23,8 @@ def search(term = DEFAULT_TERM, location = DEFAULT_LOCATION)
   response = HTTP.auth(BEARER_TOKEN).get(url, params: params)
   businesses = response.parse['businesses']
 
-  random_select = businesses.sample
+  p random_select = businesses.sample
+  coffeeshop = {  name: random_select['name'],
+                  city: random_select['location']['city'],
+                  address: random_select['location']['display_address'].join(" ") }
 end

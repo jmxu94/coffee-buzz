@@ -5,6 +5,6 @@ get '/' do
 end
 
 get '/test' do
-  p search
+  p Coffeeshop.new(search)
   erb :'index'
 end
