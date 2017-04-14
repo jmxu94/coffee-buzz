@@ -7,15 +7,14 @@ SEARCH_PATH = "/v3/businesses/search"
 
 BEARER_TOKEN = "Bearer " + "#{ENV['TOKEN']}"
 
-DEFAULT_TERM = "coffee"
 DEFAULT_LOCATION = "Seattle, WA"
 SEARCH_LIMIT = 50
 
 # Returns a parsed json object of the request
-def search(term = DEFAULT_TERM, location = DEFAULT_LOCATION)
+def search(location = DEFAULT_LOCATION)
   url = "#{API_HOST}#{SEARCH_PATH}"
   params = {
-    term: term,
+    term: "coffee",
     location: location,
     limit: SEARCH_LIMIT
   }
@@ -24,6 +23,9 @@ def search(term = DEFAULT_TERM, location = DEFAULT_LOCATION)
   businesses = response.parse['businesses']
 
   random_select = businesses.sample
+  coffeeshop = {  name: random_select['name'],
+                  city: random_select['location']['city'],
+                  address: random_select['location']['display_address'].join(" "),
+                  image_url: random_select['image_url'] }
 end
 
-p search
