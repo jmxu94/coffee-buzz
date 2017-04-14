@@ -1,10 +1,11 @@
 get '/coffeeshops' do
-  # Coffeeshop.all.destroy
-  if params['city'] == ""
-    coffeeshop = Coffeeshop.create(search)
-  else
-    coffeeshop = Coffeeshop.create(search(params['city']))
+  if Coffeeshop.all.length > 0
+    Coffeeshop.all.each do |coffeeshop|
+      coffeeshop.destroy
+    end
+    ActiveRecord::Base.connection.reset_pk_sequence!('coffeeshops')
   end
+  coffeeshop = Coffeeshop.create(search(params['location']))
   redirect "/coffeeshops/#{coffeeshop.id}"
 end
 

@@ -1,8 +1,11 @@
 <h1> Coffee Buzz! </h1>
 
 <form action='/coffeeshops' method='GET'>
-  Enter a city:
-  <input type='text' placeholder='default: Seattle, WA' name='city'>
+  Select a city:
+  <select name='location'>
+    <option value='Seattle, WA'>Seattle, WA</option>
+    <option value='Boston, MA'>Boston, MA</option>
+  </select>
   <input type='submit' value='Search'>
 </form>
 
